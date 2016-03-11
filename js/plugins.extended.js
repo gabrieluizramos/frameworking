@@ -1,4 +1,3 @@
-// Enconding: UTF-8
 $.extend({
 	init: function( exec, event, trigger, target, time ){
 		//<--
@@ -16,8 +15,8 @@ $.extend({
 			}
 		} 
 		catch( err ){
-			console.error( "Error trying to execute "+ exec );
-			console.error("Error: "+ err);
+			console.trace( "Error trying to execute "+ exec );
+			console.trace("Error: "+ err);
 			final = false;
 		}
 		finally{
@@ -48,13 +47,14 @@ $.extend({
 		$( trigger )
 		.unbind( event )
 		.bind( event, function(){
-				$( target )
-				.removeClass( "active" )
-				.slideUp( time );
 
-				$( trigger )
-				.removeClass( 'active' );
-			//$( target+".active").toggleClass( "active" ).slideUp( time ).fadeOut();
+			$( target )
+			.removeClass( "active" )
+			.slideUp( time );
+
+			$( trigger )
+			.removeClass( 'active' );
+
 			$( target+':nth-child('+ ( $(this).index()+1) +')' )
 			.slideDown( time )
 			.addClass( 'active' );

@@ -1,0 +1,90 @@
+// TYPOGRAFY
+@import url(https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300italic,300,400italic,700,700italic);
+
+// VARIABLES
+$grey: #dee6e8;
+$text-color: #585858;
+$red:#E85151;
+$wrapper: 1174px;
+
+// RESET
+*{
+	margin: 0;
+	padding: 0;
+	outline: none;
+	box-sizing: border-box;
+	font-style: inherit;
+	font-weight: inherit;
+	list-style:none;
+	vertical-align:baseline;
+	font-family: "Roboto Condensed", arial !important;
+}
+
+// CLASSES
+.wrapper{
+	width: 95%;
+	max-width: 1174px;
+	margin:0 auto;
+}
+.text{
+	color:$text-color;
+	margin-bottom:30px;
+	font-size: 15px;
+}
+.title{
+	font-size:25px;
+	text-color:darken($red , 20%);
+}
+.block{
+	display: block;
+	max-width:100%;
+	width:100%;
+	float: none;
+	margin:25px auto;
+	padding:20px;
+	background:rgba(255,255,255,0.5);
+}
+
+
+// PAGE STYLE
+.fa{
+	color:#000;
+	background:$red;
+	font-size:20px !important;
+	display:block;
+	text-align:center;
+	line-height:50px;
+	width:50px;
+	height:50px;
+	&.fa-bars{
+		cursor:pointer;
+	}
+}
+.body{
+	background:$red;
+}
+.header{
+	.title{
+		width: 100%;
+		font-size: 50px;
+		text-align: center;
+		display: block;
+	}
+}
+.block{
+	.title{
+		margin-bottom: 25px;
+	}
+}
+
+
+
+
+// FRAMEWORKING STYLE
+[data-dropdown="link"]{
+	cursor:pointer;
+}
+
+[data-dropdown="content"]{
+	display:none;
+}

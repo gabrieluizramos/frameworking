@@ -1,29 +1,58 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Frameworking - Under Construction</title>
+	<title>FrameWorking - Under Construction</title>
+	<link rel="stylesheet" href="css/style.css">
+	<!-- META -->
+	<meta name="viewport" content="width=device-width" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta charset="UTF-8">
+	<meta name="description" content="FrameWorking" />
+	<meta name="company" content="FrameWorking" />    
+	<meta name="Robots" content="all">
+	<meta name="Robots" content="index, follow">
+	<meta name="distribution" content="Global">
+	<meta name="rating" content="General">
+	<meta name="revisit-after" content="5">
+	<meta http-equiv="expires" content="0">
+	<meta property="og:title" content="FrameWorking"> 
+	<meta property="og:description" content="FrameWorking"> 
+	<meta property="og:url" content=""> 
+	<meta property="og:type" content=""> 
+	<meta property="og:image" content="/images/favicon.png"> 
+	<meta property="og:site_name" content="FrameWorking">
+	<!-- FONTAWESOME -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
-<body>
-	<div>
-		<nav class="nav-dropdown">
-			<span  data-drop="link">link</span>
-			<div class="conteudo" data-drop="content">
-				conteudo
-				<br>
-				conteudo
+<body class="body">
+	<div class="wrapper">
+		<header class="header">
+			<h1 class="title">
+				FrameWorking
+			</h1>
+		</header>
+		<div class="block">
+		<h2 class="title">Dropdown</h2>
+			<div class="text">
+				<div class="title" data-dropdown="link">click me!</div>
+				<div class="conteudo" data-dropdown="content">
+					conteudo
+					<br>
+					conteudo
+				</div>
 			</div>
-		</nav>
-	</div>
-	<div>
-		<div class="slide">
-			<div data-slider="content">slide 1</div>
-			<div data-slider="content">slide 2</div>
-			<div data-slider="content">slide 3</div>
 		</div>
-		<div class="slide-control">
-			<div data-slider="link">controle slide 1</div>
-			<div data-slider="link">controle slide 2</div>
-			<div data-slider="link">controle slide 3</div>
+		<div class="block">
+			<div class="slide">
+				<div data-slide="content">slide 1</div>
+				<div data-slide="content">slide 2</div>
+				<div data-slide="content">slide 3</div>
+			</div>
+			<div class="slide-control">
+				<div data-slide="link">controle slide 1</div>
+				<div data-slide="link">controle slide 2</div>
+				<div data-slide="link">controle slide 3</div>
+			</div>
 		</div>
 	</div>
 </body>
@@ -32,7 +61,7 @@
 <!-- PLUGINS.EXTENDED -->
 <script src="js/plugins.extended.js" charset="UTF-8"></script>
 <script>
-	$.init('dropdown','click','[data-drop="link"]','[data-drop="content"]');
-	$.init('slider','click','[data-slider="link"]','[data-slider="content"]');
+	$.init('dropdown','click','[data-dropdown="link"]','[data-dropdown="content"]');
+	$.init('slider','click','[data-slide="link"]','[data-slide="content"]');
 </script>
 </html>
