@@ -5,6 +5,8 @@ PLUGINS BASED ONLY JQUERY LIB
 <!-- PLUGINS -->
 <!-- JQUERY -->
 <script src="jquery-1.11.3.min.js"></script>
+
+
 <!-- ACCORDION ADDING/REMOVING CLASS ACTIVE ON PARENT ELEMENT -->
 <script>
     $('.accordion .accordion-link').on('click',function(){
@@ -22,6 +24,8 @@ $(document).ready(function(){
     $('.accordion-item:first-child .accordion-link').click();
 });
 </script>
+
+
 <!-- SLIDER UP AND DOWN ADDING/REMOVING CLASS ACTIVE ON MENU LINKS -->
 <script>
     $('.slider-menu-link').on('click',function(){
@@ -64,6 +68,8 @@ $('.slider-prev').click(function(){
     sliderPrev();
 });
 </script>
+
+<!-- DONE -->
 <!-- DROP DOWN (LIKE RESPONSIVE MENUS) -->
 <script>
     $('.drop-link').on('click',function(){

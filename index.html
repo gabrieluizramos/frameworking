@@ -1,16 +1,38 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Framework - Under Construction</title>
+	<title>Frameworking - Under Construction</title>
 </head>
 <body>
-
+	<div>
+		<nav class="nav-dropdown">
+			<span  data-drop="link">link</span>
+			<div class="conteudo" data-drop="content">
+				conteudo
+				<br>
+				conteudo
+			</div>
+		</nav>
+	</div>
+	<div>
+		<div class="slide">
+			<div data-slider="content">slide 1</div>
+			<div data-slider="content">slide 2</div>
+			<div data-slider="content">slide 3</div>
+		</div>
+		<div class="slide-control">
+			<div data-slider="link">controle slide 1</div>
+			<div data-slider="link">controle slide 2</div>
+			<div data-slider="link">controle slide 3</div>
+		</div>
+	</div>
 </body>
 <!-- JQUERY -->
 <script src="js/jquery-1.11.3.min.js"></script>
 <!-- PLUGINS.EXTENDED -->
-<script src="js/plugins.extended.js"></script>
+<script src="js/plugins.extended.js" charset="UTF-8"></script>
 <script>
 	$.init('dropdown','click','[data-drop="link"]','[data-drop="content"]');
+	$.init('slider','click','[data-slider="link"]','[data-slider="content"]');
 </script>
 </html>
