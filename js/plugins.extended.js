@@ -28,19 +28,30 @@ $.extend({
 		$( trigger )
 		.unbind( event )
 		.bind( event, function(){
-			if ( $( trigger ).hasClass( "active" ) ) {
-				$( trigger )
-				.toggleClass( "active" )
+
+			//<--
+			//desactivate others when effect comes up
+			// $( trigger+'[data-active="true"]' )
+			// .attr( "data-active", false )
+			// .next( target )
+			// .slideToggle( time )
+			// .attr( "data-active", false );
+			//-->
+
+			if ( $( this ).attr( "data-active") == "true" ) {
+				$( this )
+				.attr( "data-active", false )
 				.next( target )
 				.slideToggle( time )
-				.toggleClass( "active" );
+				.attr( "data-active", false );
 				return;
 			}
-			$( trigger )
-			.toggleClass( "active" )
+
+			$( this )
+			.attr( "data-active", true )
 			.next( target )
 			.slideToggle( time )
-			.toggleClass( "active" );
+			.attr( "data-active",  true );
 		});
 	},
 	slider: function( event, trigger, target, time ){
@@ -49,18 +60,18 @@ $.extend({
 		.bind( event, function(){
 
 			$( target )
-			.removeClass( "active" )
+			.attr( "data-active", false)
 			.slideUp( time );
 
 			$( trigger )
-			.removeClass( 'active' );
+			.attr( "data-active", false );
 
 			$( target+':nth-child('+ ( $(this).index()+1) +')' )
 			.slideDown( time )
-			.addClass( 'active' );
+			.attr( "data-active", true );
 
 			$( this )
-			.addClass( 'active' );
+			.attr( "data-active", true );
 		});
 		$( trigger+':nth-child(1) ' ).trigger("click");
 	}
