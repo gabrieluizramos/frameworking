@@ -31,33 +31,40 @@
 				FrameWorking
 			</h1>
 		</header>
-		<div class="block">
+		<div class="block dropdown">
 			<h2 class="title">Dropdown</h2>
 			<div class="text">
-				<div class="title" data-dropdown="link">click me!</div>
-				<div class="conteudo" data-dropdown="content">
-					conteudo
-					<br>
-					conteudo
-				</div>
-				<div class="title" data-dropdown="link">click me!</div>
-				<div class="conteudo" data-dropdown="content">
-					conteudo
-					<br>
-					conteudo
-				</div>
+				<div class="title" data-dropdown="link">DROP IT!!!!</div>
+				<p class="conteudo" data-dropdown="content">
+					ALLLLLLLLLLLLLLL YEAH! <br>
+					THAT'S THE DROPDOWN CONTENT!
+				</p>
 			</div>
 		</div>
-		<div class="block">
-			<div class="slide">
-				<div data-slide="content">slide 1</div>
-				<div data-slide="content">slide 2</div>
-				<div data-slide="content">slide 3</div>
+		<div class="block slide">
+			<h2 class="title">Slide</h2>
+			<div class="slide" data-slide="panel">
+				<strong data-slide="content">slide 1</strong>
+				<strong data-slide="content">slide 2</strong>
+				<strong data-slide="content">slide 3</strong>
 			</div>
 			<div class="slide-control">
-				<div data-slide="link">controle slide 1</div>
-				<div data-slide="link">controle slide 2</div>
-				<div data-slide="link">controle slide 3</div>
+				<div data-slide="control">controle slide 1</div>
+				<div data-slide="control">controle slide 2</div>
+				<div data-slide="control">controle slide 3</div>
+			</div>
+		</div>
+		<div class="block tabs">
+			<h2 class="title">Tabs</h2>
+			<div class="tabs-control">
+				<strong data-tab="control">tab 1</strong>
+				<strong data-tab="control">tab 2</strong>
+				<strong data-tab="control">tab 3</strong>
+			</div>
+			<div class="tabs-panel">
+				<div data-tab="panel">tab content 1</div>
+				<div data-tab="panel">tab content 2</div>
+				<div data-tab="panel">tab content 3</div>
 			</div>
 		</div>
 	</div>
@@ -67,7 +74,11 @@
 <!-- PLUGINS.EXTENDED -->
 <script src="js/plugins.extended.js" charset="UTF-8"></script>
 <script>
+	// DRODPOWN
 	$.init('dropdown','click','[data-dropdown="link"]','[data-dropdown="content"]');
-	$.init('slider','click','[data-slide="link"]','[data-slide="content"]');
+	// SLIDER
+	$.init('slider','click','[data-slide="control"]','[data-slide="content"]');
+	// TABS
+	$.init('tabs','click','[data-tab="control"]','[data-tab="panel"]');
 </script>
 </html>

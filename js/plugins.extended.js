@@ -1,10 +1,10 @@
 $.extend({
 	init: function( exec, event, trigger, target, time ){
 		//<--
-		//it's possible to execute using 'eval' js method
+		//# it's possible to execute using 'eval' js method
 		//exec = "$."+exec;
 		//eval( exec )( event, trigger, target );
-		//but let's use only jquery 
+		//# but let's use only jquery 
 		//-->
 		final = true;
 		console.log( "<-----" );
@@ -30,7 +30,7 @@ $.extend({
 		.bind( event, function(){
 
 			//<--
-			//desactivate others when effect comes up
+			//# desactivate others when effect comes up
 			// $( trigger+'[data-active="true"]' )
 			// .attr( "data-active", false )
 			// .next( target )
@@ -47,6 +47,7 @@ $.extend({
 				return;
 			}
 
+
 			$( this )
 			.attr( "data-active", true )
 			.next( target )
@@ -61,12 +62,12 @@ $.extend({
 		.bind( event, function(){
 
 			$( target )
-
 			.attr( "data-active", false)
 			.slideUp( time );
 
 			$( trigger )
 			.attr( "data-active", false );
+
 
 			$( target+':nth-child('+ ( $(this).index()+1) +')' )
 			.slideDown( time )
@@ -76,6 +77,29 @@ $.extend({
 			.attr( "data-active", true );
 
 		});
-		$( trigger+':nth-child(1) ' ).trigger("click");
+		$( trigger+':nth-child(1) ' ).trigger( "click" );
+	},
+	tabs: function( event, trigger, target, time ){
+		$( trigger )
+		.unbind( event )
+		.bind( event, function(){
+
+			$( target )
+			.attr( 'data-active', false )
+			.css( 'display', 'none' );
+
+			$( trigger )
+			.attr( 'data-active', false );
+
+
+			$( target+':nth-child('+ ( $( this ).index()+1 ) +')' )
+			.toggle( time )
+			.attr( 'data-active', true );
+
+			$( this )
+			.attr( 'data-active', true );
+
+		});
+		$( trigger+':nth-child(1)' ).trigger( 'click' );
 	}
 });

@@ -44,7 +44,18 @@ $wrapper: 1174px;
 	padding:20px;
 	background:rgba(255,255,255,0.5);
 }
-
+.clearfix{
+	&:after{
+		height: 0;
+		content:'';
+		display: block;
+		clear: both;
+	}
+}
+.clear{
+	clear:both;
+	@extend .clearfix;
+}
 
 // PAGE STYLE
 .fa{
@@ -81,10 +92,80 @@ $wrapper: 1174px;
 
 
 // FRAMEWORKING STYLE
-[data-dropdown="link"]{
+
+// DEFAULT STYLES 
+.controle-padrao{
+	width:32%;
+	display:inline-block;
+	background:#FFF;
+	text-transform:uppercase;
+	padding:10px;
+	text-align: center;
 	cursor:pointer;
+	float: left;
+	margin-right: 2%;
+	&:last-child{
+		float: right;
+		margin-right: 0;
+	}
 }
 
-[data-dropdown="content"]{
+.painel-padrao{
+	width: 100%;
+	display: block;
+	background:#FFF;
+	padding:50px;
+	font-size: 50px;
 	display:none;
+}
+
+// DROPDOWN
+.dropdown{
+	& > *{
+		@extend .clearfix;
+	}
+	[data-dropdown="link"]{
+		@extend .controle-padrao;
+		float: none;
+	}
+
+	[data-dropdown="content"]{
+		@extend .painel-padrao;
+	}
+}
+
+// SLIDE
+.slide{
+	& > *{
+		@extend .clearfix;
+	}
+	[data-slide="control"]{
+		@extend .controle-padrao;
+	}
+	[data-slide="content"]{
+		@extend .painel-padrao;
+		margin-bottom: 5px;
+	}
+}
+
+
+// TABS
+.tabs{
+	& > *{
+		@extend .clearfix;
+		margin-bottom:5px;
+	}
+	[data-tab="control"]{
+		@extend .controle-padrao;
+	}
+	[data-tab="panel"]{
+		@extend .painel-padrao;
+	}
+
+}
+
+// SET DIFFERENT STYLE TO ALL ACTIVE ELEMENTS
+[data-active="true"]{
+	background:darken(#FFF, 10%);
+	color:$red;
 }
