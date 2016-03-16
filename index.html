@@ -67,6 +67,18 @@
 				<div data-tab="panel">tab content 3</div>
 			</div>
 		</div>
+		<div class="block modal">
+			<h2 class="title">Modal</h2>
+			<span data-modal="button">Open modal</span>
+			<div class="clear"></div>
+			<div data-modal="panel">
+				<div data-modal="outer"></div>
+				<div data-modal="content">
+					<span data-modal="close">X</span>
+					Hey!!!! I'm your new friend modal! =D
+				</div>
+			</div>
+		</div>
 	</div>
 </body>
 <!-- JQUERY -->
@@ -80,5 +92,7 @@
 	$.init('slider','click','[data-slide="control"]','[data-slide="content"]');
 	// TABS
 	$.init('tabs','click','[data-tab="control"]','[data-tab="panel"]');
+	// MODAL
+	$.init('modal','click','[data-modal="button"]','[data-modal="panel"]', 500);
 </script>
 </html>
