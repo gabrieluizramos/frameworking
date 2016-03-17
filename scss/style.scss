@@ -212,6 +212,20 @@ $wrapper: 1174px;
 	}
 }
 
+//ACCORDION
+.accordion{
+	[data-accordion="header"]{
+		@extend .controle-padrao;
+		width:100%;
+		float: none;
+		display: block;
+		margin:5px auto;
+	}
+	[data-accordion="content"]{
+		@extend .painel-padrao;
+	}
+}
+
 // SET DIFFERENT STYLE TO ALL ACTIVE ELEMENTS
 [data-active="true"]{
 	background:darken(#FFF, 10%);

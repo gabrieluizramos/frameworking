@@ -79,6 +79,29 @@
 				</div>
 			</div>
 		</div>
+		<div class="block accordion">
+			<h2 class="title">Accordion</h2>
+			<ul>
+				<li>
+					<span data-accordion="header">Accordion 1</span>
+					<div data-accordion="content">
+						content
+					</div>
+				</li>
+				<li>
+					<span data-accordion="header">Accordion 2</span>
+					<div data-accordion="content">
+						content 2
+					</div>
+				</li>
+				<li>
+					<span data-accordion="header">Accordion 3</span>
+					<div data-accordion="content">
+						content 3
+					</div>
+				</li>
+			</ul>
+		</div>
 	</div>
 </body>
 <!-- JQUERY -->
@@ -93,6 +116,8 @@
 	// TABS
 	$.init('tabs','click','[data-tab="control"]','[data-tab="panel"]');
 	// MODAL
-	$.init('modal','click','[data-modal="button"]','[data-modal="panel"]', 500);
+	$.init('modal','click','[data-modal="button"]','[data-modal="panel"]');
+	// ACCORDION
+	$.init('accordion','click','[data-accordion="header"]','[data-accordion="content"]', 500);
 </script>
 </html>
