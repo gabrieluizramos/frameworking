@@ -205,5 +205,43 @@ $.extend({
 			.bind( 'click', close );
 		}
 		$( target ).css( 'display', 'none' );
+	},
+	accordion: function( event, trigger, target, time ){
+		$( trigger )
+		.unbind( event )
+		.bind( event, function(){
+
+			if ( $( this ).attr( 'data-active' ) == 'true' ) {
+				
+				$( this )
+				.attr( 'data-active', false );
+
+				$( this )
+				.next( target )
+				.slideToggle( time )
+				.attr( 'data-active', false );
+				return;
+			}
+
+			$( trigger+'[data-active="true"]' )
+			.attr( 'data-active', false )
+			.next( target )
+			.slideToggle( time )
+			.attr( 'data-active', false );
+
+			$( trigger )
+			.attr( 'data-active', false );
+
+			$( target )
+			.attr( 'data-active', false );
+
+			$( this )
+			.attr( 'data-active', true )
+			.next( target )
+			.slideToggle( time )
+			.attr( 'data-active', true );
+
+		});
+		$( target ).css('display', 'none');
 	}
 });
