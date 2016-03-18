@@ -106,23 +106,27 @@ $.extend({
 		$( trigger+':nth-child(1)' ).trigger( 'click' );
 	},
 	modal: function( event, trigger, target, time ){
-			// <-----
+		// <-----
+		
 		//SET THE closeModal function, to bind in elements
 		close = function(){
 			$( target )
 			.fadeOut( time );
-			/*
-			<--
-			#other animations properties
-				.toggle( time );
-				.slideToggle( time );
-			-->
-			*/
+
 			$( trigger )
 			.attr( 'data-active', false );
 			$( target )
 			.attr( 'data-active', false );
 		}
+		/*
+			<--
+			#other animations properties
+				.toggle( time )
+				.slideToggle( time )
+				.slideDown( time )
+				.slideUp( time )
+			-->
+			*/
 		// ----->
 
 		//<-----
@@ -150,24 +154,22 @@ $.extend({
 			'padding':'10vh',
 			'color':'#000',
 			'z-index':'10000',
-			'font-size':'10vw'
+			'font-size':'10vw',
+			'cursor':'default'
 		});
 		//----->
+		
 		$( trigger )
 		.unbind( event )
 		.bind( event, function(){
-			$( target )
-			.fadeIn( time );
-			/*
-			<--
-			#other animations properties
-				.toggle( time );
-				.slideToggle( time );
-			-->
-			*/
-			$( this ).attr( 'data-active', true );
-			$( target ).attr( 'data-active', true );
+			$( this )
+			.attr( 'data-active', true )
+			.nextAll( target )
+			.eq(0)
+			.fadeIn( time )
+			.attr( 'data-active', true );
 		});
+
 		if ( $( '[data-modal="close"]' ) ) {
 			//<-----
 			$( '[data-modal="close"]' ).css({
@@ -198,7 +200,8 @@ $.extend({
 			$( '[data-modal="outer"' ).css({
 				'width':'100vw',
 				'height':'100vh',
-				'position':'absolute'
+				'position':'absolute',
+				'cursor':'default'
 			});
 			$( '[data-modal="outer"]' )
 			.unbind( 'click' )
