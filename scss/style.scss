@@ -3,8 +3,10 @@
 
 // VARIABLES
 $grey: #dee6e8;
-$text-color: #585858;
+// $text-color: #585858;
+$text-color: #FFF;
 $red:#E85151;
+$color-1:#045e66;
 $blue: #0b3a6d;
 $wrapper: 1174px;
 
@@ -31,11 +33,11 @@ $wrapper: 1174px;
 .text{
 	color:$text-color;
 	margin-bottom:30px;
-	font-size: 15px;
+	font-size: 18px;
 }
 .title{
 	font-size:25px;
-	text-color:darken($red , 20%);
+	color:#FFF;
 }
 .block{
 	display: block;
@@ -62,7 +64,7 @@ $wrapper: 1174px;
 // PAGE STYLE
 .fa{
 	color:#000;
-	background:$red;
+	background:$color-1;
 	font-size:20px !important;
 	display:block;
 	text-align:center;
@@ -74,7 +76,7 @@ $wrapper: 1174px;
 	}
 }
 .body{
-	background:$red;
+	background:$color-1;
 }
 .header{
 	.title{
@@ -96,8 +98,6 @@ $wrapper: 1174px;
 }
 
 
-
-
 // FRAMEWORKING STYLE
 
 // DEFAULT STYLES 
@@ -112,6 +112,7 @@ $wrapper: 1174px;
 	float: left;
 	margin-right: 2%;
 	border:none;
+	color:$color-1;
 	&:last-child{
 		float: right;
 		margin-right: 0;
@@ -126,6 +127,85 @@ $wrapper: 1174px;
 	font-size: 50px;
 }
 
+.nav{
+	.li{
+		float: left;
+		width: 32%;
+		margin-right:1px;
+		font-size:20px;
+		text-align:center;
+		cursor:pointer;
+		padding:20px 0;
+		color:#FFF;
+		&:last-child{
+			margin-right: 0;
+			float: right;
+		}
+		&[data-active="true"]{
+			color:lighten( $color-1, 10% );
+			background:#FFF;
+		}
+	}
+}
+.ordered-list{
+	.ordered-item{
+		width:100%;
+		display:block;
+		background:#FFF;
+		margin:5px auto;
+		position:relative;
+		// counter-increment: contador;
+		padding:20px;
+		// &:after{
+		// 	content: counter(contador, upper-roman);
+		// 	position:absolute;
+		// 	left:0;
+		// 	padding: 10px;
+		// 	text-align:center;
+		// 	border:1px solid $color-1;
+		// 	border-radius:50%;
+		// }
+	}
+}
+.optional{
+	text-decoration: underline;
+	display: block;
+	margin:5px auto;
+	&:before{
+		content:'*';
+		color:$red;
+		display: inline-block;
+		margin-right: 5px;
+	}
+}
+.important{
+	color:$red;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: bold;
+}
+.hr{
+	display: block;
+	width: 90%;
+	margin: 50px auto;
+	color:#FFF;
+	background-color:#FFF;
+	height: 1px;
+	border: none;
+}
+.function{
+	background:lighten($red, 5%);
+	color:#FFF;
+	display:block;
+	margin:10px auto;
+	padding: 20px;
+	font-size: 22px;
+	text-align:center;
+}
+
+[data-tab="conteudo-principal"]{
+	background: transparent !important;
+}
 // DROPDOWN
 .dropdown{
 	[data-dropdown="link"]{
@@ -229,5 +309,5 @@ $wrapper: 1174px;
 // SET DIFFERENT STYLE TO ALL ACTIVE ELEMENTS
 [data-active="true"]{
 	background:darken(#FFF, 10%);
-	color:$red;
+	color:$color-1;
 }

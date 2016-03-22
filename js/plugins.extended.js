@@ -95,7 +95,7 @@ $.extend({
 			.attr( 'data-active', false );
 
 
-			$( target+':nth-child('+ ( $( this ).index()+1 ) +')' )
+			$( target+':nth-of-type('+ ( $( this ).index()+1 ) +')' )
 			.toggle( time )
 			.attr( 'data-active', true );
 
@@ -246,5 +246,20 @@ $.extend({
 
 		});
 		$( target ).css('display', 'none');
+	},
+	code: function( element ){
+		$(function(){
+			$( element ).css({
+				'width':'100%',
+				'display':'block',
+				'background':'rgba(255,255,255,0.8)',
+				'resize':'none',
+				'padding':'20px'
+			});
+			$text = $( element ).html();
+			$text = $text.prepend('<br>');
+			$( element ).text( $text );
+			console.log()
+		});
 	}
 });

@@ -31,85 +31,164 @@
 				FrameWorking
 			</h1>
 		</header>
-		<div class="block dropdown">
-			<h2 class="title">Dropdown</h2>
-			<div class="text">
-				<div class="title" data-dropdown="link">DROP IT!!!!</div>
-				<p class="conteudo" data-dropdown="content">
-					ALLLLLLLLLLLLLLL YEAH! <br>
-					THAT'S THE DROPDOWN CONTENT!
+		<nav class="block nav">
+			<ul>
+				<li class="li" data-tab="menu-principal">EXAMPLES</li>
+				<li class="li" data-tab="menu-principal">USAGE</li>
+				<li class="li" data-tab="menu-principal">ABOUT</li>
+			</ul>
+		</nav>
+		<div class="examples" data-tab="conteudo-principal">
+			<div class="block dropdown">
+				<h2 class="title">Dropdown</h2>
+				<div class="text">
+					<div class="title" data-dropdown="link">DROP IT!!!!</div>
+					<p class="conteudo" data-dropdown="content">
+						ALLLLLLLLLLLLLLL YEAH! <br>
+						THAT'S THE DROPDOWN CONTENT!
+					</p>
+				</div>
+			</div>
+			<div class="block slide">
+				<h2 class="title">Slide</h2>
+				<div class="slide" data-slide="panel">
+					<strong data-slide="content">slide 1</strong>
+					<strong data-slide="content">slide 2</strong>
+					<strong data-slide="content">slide 3</strong>
+				</div>
+				<div class="slide-control">
+					<div data-slide="control">controle slide 1</div>
+					<div data-slide="control">controle slide 2</div>
+					<div data-slide="control">controle slide 3</div>
+				</div>
+			</div>
+			<div class="block tabs">
+				<h2 class="title">Tabs</h2>
+				<div class="tabs-control">
+					<strong data-tab="control">tab 1</strong>
+					<strong data-tab="control">tab 2</strong>
+					<strong data-tab="control">tab 3</strong>
+				</div>
+				<div class="tabs-panel">
+					<div data-tab="panel">tab content 1</div>
+					<div data-tab="panel">tab content 2</div>
+					<div data-tab="panel">tab content 3</div>
+				</div>
+			</div>
+			<div class="block modal">
+				<h2 class="title">Modal</h2>
+				<span data-modal="button">Open modal</span>
+				<div class="clear"></div>
+				<div data-modal="panel">
+					<div data-modal="outer"></div>
+					<div data-modal="content">
+						<span data-modal="close">X</span>
+						Hey!!!! I'm your new friend modal! =D
+					</div>
+				</div>
+				<span data-modal="button">Open modal 2</span>
+				<div class="clear"></div>
+				<div data-modal="panel">
+					<div data-modal="outer"></div>
+					<div data-modal="content">
+						<span data-modal="close">X</span>
+						I'm not the first modal
+					</div>
+				</div>
+			</div>
+			<div class="block accordion">
+				<h2 class="title">Accordion</h2>
+				<ul>
+					<li>
+						<span data-accordion="header">Accordion 1</span>
+						<div data-accordion="content">
+							content
+						</div>
+					</li>
+					<li>
+						<span data-accordion="header">Accordion 2</span>
+						<div data-accordion="content">
+							content 2
+						</div>
+					</li>
+					<li>
+						<span data-accordion="header">Accordion 3</span>
+						<div data-accordion="content">
+							content 3
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="usage" data-tab="conteudo-principal">
+			<div class="block">
+				<h2 class="title">Usage</h2>
+				<p class="text">
+					To use the lib, just import de plugins.extended.js script into your project and call the <em><b>$.init</b></em> function.
+					<br>
+					This function is used passing at least 4 arguments. In order, they are:
+				</p>
+				<ol class="ordered-list">
+					<li class="ordered-item">
+						Effect name ( 'dropdown', 'slider', 'tabs', 'modal', 'accordion' );
+					</li>
+					<li class="ordered-item">
+						Event that will listen to execute the effect ('click', 'mouseenter', 'mouseenter mouseleave' and all the events used in jquery);
+					</li>
+					<li class="ordered-item">
+						Element that will trigger the execution (I prefer using 'data-' elements, simples as [data-accordion="header"] to accordion's header, but you can use jquery notation as you like (classes and id);
+					</li>
+					<li class="ordered-item">
+						Element that will receive the execution, such as [data-accordion="panel"] to execute the accordion efect in the elements that have this attribute ( like example above );
+					</li>
+				</ol>
+				<p class="text">
+					<span class="optional">
+						You can aways pass a 5th optional argument that will be used as a time to execute the effect.
+					</span>
+					Your javascript function will sound just like this:
+					<span class="function">
+						$.init( 'dropdown','click','[data-dropdown="link"]','[data-dropdown="content"]', 500 );
+					</span>
+				</p>
+				<p class="text">
+					You can explore the plugins.extended.js lib to other functions, animations and customize your effects. <br>
+					All the css used only in elements of the extended lib is setted up by jquery too.
+				</p>
+				<hr class="hr">
+				<h3 class="title">Animations List</h3>
+				<ul class="ordered-list">
+					<li class="ordered-item">
+						Dropdown: execute a dropdown effect, just like reponsive menus;
+					</li>
+					<li class="ordered-item">
+						Slider: performs a simple slide ( up / down );
+					</li>
+					<li class="ordered-item">
+						Tabs: execute a tab animation;
+					</li>
+					<li class="ordered-item">
+						Modal: execute a modal animation. <br>
+						<span class="important">Important:</span> To completely use this effect is necesseary to create other two elements inside your modal "content", and they are elements with attributes [data-modal="close"] that, with a "X" inside will perform the close button, and [data-modal="outer"], that will perform the close action when user clicks ( or execute the event you passed to the function ) in the outside of your modal full ( black ) panel;
+					</li>
+					<li class="ordered-item">
+						Accordion: performs a accordion simple animation.
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="usage" data-tab="conteudo-principal">
+			<div class="block">
+				<h2 class="title">About</h2>
+				<p class="text">
+					This project is in search of execute the most used front-end animation using jquery, without import plugins or other heavy scripts that make your pages load slower. <br>
+					FrameWorking lib is in constant update. <br>
+					When a update is ready to use, I will pushing the files to the repo.
+				</p>
+				<p class="text">
+					Hope you enjoy it!
 				</p>
 			</div>
-		</div>
-		<div class="block slide">
-			<h2 class="title">Slide</h2>
-			<div class="slide" data-slide="panel">
-				<strong data-slide="content">slide 1</strong>
-				<strong data-slide="content">slide 2</strong>
-				<strong data-slide="content">slide 3</strong>
-			</div>
-			<div class="slide-control">
-				<div data-slide="control">controle slide 1</div>
-				<div data-slide="control">controle slide 2</div>
-				<div data-slide="control">controle slide 3</div>
-			</div>
-		</div>
-		<div class="block tabs">
-			<h2 class="title">Tabs</h2>
-			<div class="tabs-control">
-				<strong data-tab="control">tab 1</strong>
-				<strong data-tab="control">tab 2</strong>
-				<strong data-tab="control">tab 3</strong>
-			</div>
-			<div class="tabs-panel">
-				<div data-tab="panel">tab content 1</div>
-				<div data-tab="panel">tab content 2</div>
-				<div data-tab="panel">tab content 3</div>
-			</div>
-		</div>
-		<div class="block modal">
-			<h2 class="title">Modal</h2>
-			<span data-modal="button">Open modal</span>
-			<div class="clear"></div>
-			<div data-modal="panel">
-				<div data-modal="outer"></div>
-				<div data-modal="content">
-					<span data-modal="close">X</span>
-					Hey!!!! I'm your new friend modal! =D
-				</div>
-			</div>
-			<span data-modal="button">Open modal 2</span>
-			<div class="clear"></div>
-			<div data-modal="panel">
-				<div data-modal="outer"></div>
-				<div data-modal="content">
-					<span data-modal="close">X</span>
-					I'm not the first modal
-				</div>
-			</div>
-		</div>
-		<div class="block accordion">
-			<h2 class="title">Accordion</h2>
-			<ul>
-				<li>
-					<span data-accordion="header">Accordion 1</span>
-					<div data-accordion="content">
-						content
-					</div>
-				</li>
-				<li>
-					<span data-accordion="header">Accordion 2</span>
-					<div data-accordion="content">
-						content 2
-					</div>
-				</li>
-				<li>
-					<span data-accordion="header">Accordion 3</span>
-					<div data-accordion="content">
-						content 3
-					</div>
-				</li>
-			</ul>
 		</div>
 	</div>
 </body>
@@ -124,9 +203,12 @@
 	$.init('slider','click','[data-slide="control"]','[data-slide="content"]');
 	// TABS
 	$.init('tabs','click','[data-tab="control"]','[data-tab="panel"]');
+	$.init('tabs','click','[data-tab="menu-principal"]','[data-tab="conteudo-principal"]');
 	// MODAL
 	$.init('modal','click','[data-modal="button"]','[data-modal="panel"]');
 	// ACCORDION
 	$.init('accordion','click','[data-accordion="header"]','[data-accordion="content"]', 500);
+	// CODE
+	//$.init('code', '[data-code="panel"]');
 </script>
 </html>
