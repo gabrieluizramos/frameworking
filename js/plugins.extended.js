@@ -280,10 +280,10 @@ $.extend({
 					'transform': 'translateX(0)'
 				}).attr('data-active',false);
 				$( trigger ).attr('data-active', false);
-				$( 'body' ).css('overflow', 'initial');
+				$( 'body' ).css('overflow-x', 'initial');
 				return;
 			}
-			$( 'body' ).css('overflow', 'hidden');
+			$( 'body' ).css('overflow-x', 'hidden');
 			$( target ).css({
 				'height':' 100%',
 				'position':' relative',
