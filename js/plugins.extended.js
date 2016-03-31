@@ -267,8 +267,8 @@ $.extend({
 		});
 		canvasWidth = $( '[data-canvas="menu"]' ).css('width');
 		$( '[data-canvas="menu"]' ).css({
-			'-webkit-transform':' translate3d(-'+ canvasWidth +',0,0)',
-			'transform':' translate3d(-'+ canvasWidth +',0,0)'
+			'-webkit-transform':' translateX(-'+ canvasWidth +')',
+			'transform':' translateX(-'+ canvasWidth +')'
 		});
 		// THE PLUGIN ACTIVATION
 		$(trigger )
@@ -276,28 +276,25 @@ $.extend({
 		.bind( event , function(){
 			if ( $( trigger ).attr('data-active') == "true" ) {
 				$( target ).css({
-					'-webkit-transform': 'translate3d(0,0,0)',
-					'transform': 'translate3d(0,0,0)'
+					'-webkit-transform': 'translateX(0)',
+					'transform': 'translateX(0)'
 				}).attr('data-active',false);
 				$( trigger ).attr('data-active', false);
-				$( 'body' ).css('overflow-x', 'initial');
+				//$( 'body' ).css('overflow', 'initial');
 				return;
 			}
+			//$( 'body' ).css('overflow', 'hidden');
 			$( target ).css({
 				'height':' 100%',
 				'position':' relative',
-				'-webkit-transform':' translate3d(0)',
-				'transform':' translate3d(0)',
+				'-webkit-transform':' translateX(0)',
+				'transform':' translateX(0)',
 				'-webkit-transition':' '+ ( time / 1000 ) +'s ease all',
 				'transition':' '+ ( time / 1000 ) +'s ease all',
-				'-webkit-backface-visibility':' hidden',
-				'backface-visibility':' hidden',
-				'-webkit-transform': 'translate3d('+ canvasWidth +',0,0)',
-				'transform': 'translate3d('+ canvasWidth +',0,0)'
+				'-webkit-transform': 'translateX('+ canvasWidth +')',
+				'transform': 'translateX('+ canvasWidth +')'
 			}).attr('data-active',true);
 			$( trigger ).attr('data-active', true);
-			// SET THIS IF YOU WANT THAT THE BODY HIDE THE OVERFLOW-X WHEN CANVAS IS ACTIVATED
-			//$( 'body' ).css('overflow-x', 'hidden');
 		});
 	},
 	code: function( element ){
