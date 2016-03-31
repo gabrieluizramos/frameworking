@@ -23,6 +23,9 @@ $wrapper: 1174px;
 	font-family: "Roboto Condensed", arial !important;
 	word-wrap: break-word;
 }
+body{
+	height: 100%;
+}
 
 // CLASSES
 .wrapper{
@@ -304,6 +307,40 @@ $wrapper: 1174px;
 	}
 	[data-accordion="content"]{
 		@extend .painel-padrao;
+	}
+}
+
+// CANVAS MENU
+[data-canvas="container"]{
+	[data-canvas="link"][data-active="true"], &[data-active="true"]{
+		background:initial;
+	}
+	[data-canvas="link"]{
+		background: #FFF;
+		padding: 15px;
+		cursor: pointer;
+		display: block;
+		width: 50%;
+		font-size: 20px;
+		text-transform: uppercase;
+		text-align: center;
+	}
+	[data-canvas="menu"]{
+		background: #023135;
+		padding: 50px;
+		[data-canvas="link"]{
+			background:#FFF !important;
+			float: right;
+			width: auto;
+		}
+		a{
+			color: lighten( $color-1, 10% );
+			display: block;
+			width: 100%;
+			margin-bottom: 15px;
+			text-transform: uppercase;
+			font-weight: bold;
+		}
 	}
 }
 

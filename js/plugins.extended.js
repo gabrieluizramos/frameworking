@@ -247,6 +247,59 @@ $.extend({
 		});
 		$( target ).css('display', 'none');
 	},
+	canvas: function( event, trigger, target, time ){
+
+		if ( $( '[data-canvas="menu"]' ).length <= 0 ) {
+			return;
+		}
+
+		// SET FIXED STYLES
+		$( 'body' ).css('height','100%');
+		$( '[data-canvas="menu"]' ).css({
+			'position':'absolute',
+			'height':'100%'	
+		});	
+		// SET WIDTH
+		var canvasWidth = $( '[data-canvas="menu"]' ).css('width');
+		canvasWidth = "calc( "+ canvasWidth +" + 10% )"
+		$( '[data-canvas="menu"]' ).css({
+			'width': canvasWidth
+		});
+		canvasWidth = $( '[data-canvas="menu"]' ).css('width');
+		$( '[data-canvas="menu"]' ).css({
+			'-webkit-transform':' translate3d(-'+ canvasWidth +',0,0)',
+			'transform':' translate3d(-'+ canvasWidth +',0,0)'
+		});
+		// THE PLUGIN ACTIVATION
+		$(trigger )
+		.unbind( event )
+		.bind( event , function(){
+			if ( $( trigger ).attr('data-active') == "true" ) {
+				$( target ).css({
+					'-webkit-transform': 'translate3d(0,0,0)',
+					'transform': 'translate3d(0,0,0)'
+				}).attr('data-active',false);
+				$( trigger ).attr('data-active', false);
+				$( 'body' ).css('overflow-x', 'initial');
+				return;
+			}
+			$( target ).css({
+				'height':' 100%',
+				'position':' relative',
+				'-webkit-transform':' translate3d(0)',
+				'transform':' translate3d(0)',
+				'-webkit-transition':' '+ ( time / 1000 ) +'s ease all',
+				'transition':' '+ ( time / 1000 ) +'s ease all',
+				'-webkit-backface-visibility':' hidden',
+				'backface-visibility':' hidden',
+				'-webkit-transform': 'translate3d('+ canvasWidth +',0,0)',
+				'transform': 'translate3d('+ canvasWidth +',0,0)'
+			}).attr('data-active',true);
+			$( trigger ).attr('data-active', true);
+			// SET THIS IF YOU WANT THAT THE BODY HIDE THE OVERFLOW-X WHEN CANVAS IS ACTIVATED
+			//$( 'body' ).css('overflow-x', 'hidden');
+		});
+	},
 	code: function( element ){
 		$(function(){
 			$( element ).css({
