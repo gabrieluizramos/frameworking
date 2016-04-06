@@ -297,6 +297,28 @@ $.extend({
 			$( trigger ).attr('data-active', true);
 		});
 	},
+	parallax: function( element , xPos , dataAttr ){
+		if ( !xPos ) xPos = '50%';
+		if ( !dataAttr ) dataAttr = element;
+		dataAttr = dataAttr.replace('[','').replace(']','');
+		$( element ).each(function() {
+			$( this ).css({
+				'width':' 100%',
+				'max-width':'100%',
+				'position':' relative',
+				'background-position': xPos +' 0' ,
+				'background-repeat':' no-repeat',
+				'background-attachment':' fixed',
+			});
+			var $obj = $( this );
+			$(window).scroll(function() {
+				var offset = $obj.offset();
+				var yPos = - ( $(window).scrollTop() - offset.top ) / $obj.attr( dataAttr );
+				var bgPos = xPos + '' + yPos + 'px';
+				$obj.css('background-position', bgPos);
+			});
+		});
+	},
 	code: function( element ){
 		$(function(){
 			$( element ).css({
