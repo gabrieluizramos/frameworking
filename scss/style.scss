@@ -345,6 +345,14 @@ body{
 	}
 }
 
+// PARALLAX
+.parallax{
+	[data-parallax]{
+		background-image: url( ../images/nebulosa.jpg );
+		padding: 15em;
+	}
+}
+
 // SET DIFFERENT STYLE TO ALL ACTIVE ELEMENTS
 [data-active="true"]{
 	background:darken(#FFF, 10%);

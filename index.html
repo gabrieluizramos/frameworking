@@ -26,14 +26,14 @@
 </head>
 <body class="body">
 	<div data-canvas="container">
-		<div data-canvas="menu">
+		<!-- <div data-canvas="menu">
 			<a data-canvas="link" class="toggle-menu btn">X</a>
 			<ul>
 				<li><a href="#">Link 1</a></li>
 				<li><a href="#">Link 2</a></li>
 				<li><a href="#">Link 3</a></li>
 			</ul>
-		</div>
+		</div> -->
 		<div class="wrapper">
 			<header class="header">
 				<h1 class="title">
@@ -48,9 +48,9 @@
 				</ul>
 			</nav>
 			<div class="examples" data-tab="conteudo-principal">
-				<div class="block canvas">
+				<!-- <div class="block canvas">
 					<span data-canvas="link">Off Canvas Menu</span>
-				</div>
+				</div> -->
 				<div class="block dropdown">
 					<h2 class="title">Dropdown</h2>
 					<div class="text">
@@ -131,6 +131,11 @@
 						</li>
 					</ul>
 				</div>
+				<div class="block parallax">
+					<h2 class="title">Parallax Background</h2>
+					<div data-parallax="3">		
+					</div>
+				</div>
 			</div>
 			<div class="usage" data-tab="conteudo-principal">
 				<div class="block">
@@ -168,14 +173,16 @@
 						All the css used only in elements of the extended lib is setted up by jquery too.
 						<br>
 						When initialized, the functions will display a message in your console log containing the name and the activation status ( true to success and false to fail ).
+						<br>
+						You can call the functions without the $.init effect, just calling $.functionName and passing the required arguments.
 					</p>
 					<hr class="hr">
 					<h3 class="title">Animations List</h3>
 					<ul class="ordered-list">
-					<li class="ordered-item">
+					<!-- <li class="ordered-item">
 							canvas: performs an off-canvas menu animation. <br>
 							<span class="important">Important:</span> To completely use this effect is necessary to create an element with attribute [data-canvas="menu"], used to set the menu inner container animation.
-						</li>
+						</li> -->
 						<li class="ordered-item">
 							dropdown: execute a dropdown effect, just like reponsive menus;
 						</li>
@@ -190,7 +197,11 @@
 							<span class="important">Important:</span> To completely use this effect is necessary to create other two elements inside your modal "content", and they are elements with attributes [data-modal="close"] that, with a "X" inside will perform the close button, and [data-modal="outer"], that will perform the close action when user clicks ( or execute the event you passed to the function ) in the outside of your modal full ( black ) panel;
 						</li>
 						<li class="ordered-item">
-							accordion: performs a accordion simple animation.
+							accordion: performs an accordion simple animation.
+						</li>
+						<li class="ordered-item">
+							parallax: execute a parallax background simple animation. <br>
+							<span class="important">Important:</span> To completely use this effect, just call 'parallax', pass the element that will have the background parallaxed, and the [data-*] attribute with the animation speed value ( just set something like [data-parallax="5"] and pass '[data-parallax]' as the 4th argument, you can just an [data-parallax] attribute with the value, and pass as argument only one time. without passing the 4th argument, the function will assume that the 2nd argument is the data-attribute and use its value to proceed with the animation ).
 						</li>
 					</ul>
 				</div>
@@ -227,8 +238,10 @@
 	$.init('modal','click','[data-modal="button"]','[data-modal="panel"]');
 	// ACCORDION
 	$.init('accordion','click','[data-accordion="header"]','[data-accordion="content"]', 500);
+	// PARALLAX
+	$.init('parallax', '[data-parallax]' , '80%');
 	// MENU OFF CANVAS/
-	$.init('canvas','click','[data-canvas="link"]','[data-canvas="container"]', 500);
+	//$.init('canvas','click','[data-canvas="link"]','[data-canvas="container"]', 500);
 	// CODE
 	//$.init('code', '[data-code="panel"]');
 </script>
