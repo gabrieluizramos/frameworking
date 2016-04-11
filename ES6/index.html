@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FrameWorking - Under Construction</title>
+	<link rel="stylesheet" href="css/style.css">
+	<!-- META -->
+	<meta name="viewport" content="width=device-width" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta charset="UTF-8">
+	<meta name="description" content="FrameWorking" />
+	<meta name="company" content="FrameWorking" />    
+	<meta name="Robots" content="all">
+	<meta name="Robots" content="index, follow">
+	<meta name="distribution" content="Global">
+	<meta name="rating" content="General">
+	<meta name="revisit-after" content="5">
+	<meta http-equiv="expires" content="0">
+	<meta property="og:title" content="FrameWorking"> 
+	<meta property="og:description" content="FrameWorking"> 
+	<meta property="og:url" content=""> 
+	<meta property="og:type" content=""> 
+	<meta property="og:image" content="/images/favicon.png"> 
+	<meta property="og:site_name" content="FrameWorking">
+	<!-- FONTAWESOME -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+<body class="body">
+	<div data-canvas="container">
+		<!-- <div data-canvas="menu">
+			<a data-canvas="link" class="toggle-menu btn">X</a>
+			<ul>
+				<li><a href="#">Link 1</a></li>
+				<li><a href="#">Link 2</a></li>
+				<li><a href="#">Link 3</a></li>
+			</ul>
+		</div> -->
+		<div class="wrapper">
+			<header class="header">
+				<h1 class="title">
+					OOFrameWorking
+				</h1>
+			</header>
+			<nav class="block nav">
+				<ul>
+					<li class="li" data-tab="menu-principal">EXAMPLES</li>
+					<li class="li" data-tab="menu-principal">USAGE</li>
+					<li class="li" data-tab="menu-principal">ABOUT</li>
+				</ul>
+			</nav>
+			<div class="examples" data-tab="conteudo-principal">
+				<!-- <div class="block canvas">
+					<span data-canvas="link">Off Canvas Menu</span>
+				</div> -->
+				<div class="block dropdown">
+					<h2 class="title">Dropdown</h2>
+					<div class="text">
+						<div class="title" data-dropdown="link">DROP IT!!!!</div>
+						<p class="conteudo" data-dropdown="content">
+							ALLLLLLLLLLLLLLL YEAH! <br>
+							THAT'S THE DROPDOWN CONTENT!
+						</p>
+					</div>
+				</div>
+				<div class="block slide">
+					<h2 class="title">Slide</h2>
+					<div class="slide" data-slide="panel">
+						<strong data-slide="content">slide 1</strong>
+						<strong data-slide="content">slide 2</strong>
+						<strong data-slide="content">slide 3</strong>
+					</div>
+					<div class="slide-control">
+						<div data-slide="control">controle slide 1</div>
+						<div data-slide="control">controle slide 2</div>
+						<div data-slide="control">controle slide 3</div>
+					</div>
+				</div>
+				<div class="block tabs">
+					<h2 class="title">Tabs</h2>
+					<div class="tabs-control">
+						<strong data-tab="control">tab 1</strong>
+						<strong data-tab="control">tab 2</strong>
+						<strong data-tab="control">tab 3</strong>
+					</div>
+					<div class="tabs-panel">
+						<div data-tab="panel">tab content 1</div>
+						<div data-tab="panel">tab content 2</div>
+						<div data-tab="panel">tab content 3</div>
+					</div>
+				</div>
+				<div class="block modal">
+					<h2 class="title">Modal</h2>
+					<span data-modal="button">Open modal</span>
+					<div class="clear"></div>
+					<div data-modal="panel">
+						<div data-modal="outer"></div>
+						<div data-modal="content">
+							<span data-modal="close">X</span>
+							Hey!!!! I'm your new friend modal! =D
+						</div>
+					</div>
+					<span data-modal="button">Open modal 2</span>
+					<div class="clear"></div>
+					<div data-modal="panel">
+						<div data-modal="outer"></div>
+						<div data-modal="content">
+							<span data-modal="close">X</span>
+							I'm not the first modal
+						</div>
+					</div>
+				</div>
+				<div class="block accordion">
+					<h2 class="title">Accordion</h2>
+					<ul>
+						<li>
+							<span data-accordion="header">Accordion 1</span>
+							<div data-accordion="content">
+								content
+							</div>
+						</li>
+						<li>
+							<span data-accordion="header">Accordion 2</span>
+							<div data-accordion="content">
+								content 2
+							</div>
+						</li>
+						<li>
+							<span data-accordion="header">Accordion 3</span>
+							<div data-accordion="content">
+								content 3
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="block parallax">
+					<h2 class="title">Parallax Background</h2>
+					<div data-parallax="3">		
+					</div>
+				</div>
+			</div>
+			<div class="usage" data-tab="conteudo-principal">
+				<div class="block">
+					<h2 class="title">Usage</h2>
+					<p class="text">
+						To use the lib, just import de plugins.extended.js script into your project and call the <em><b>$.init</b></em> function.
+						<br>
+						This function is used passing at least 4 arguments. In order, they are:
+					</p>
+					<ol class="ordered-list">
+						<li class="ordered-item">
+							Effect name ( 'dropdown', 'slider', 'tabs', 'modal', 'accordion' );
+						</li>
+						<li class="ordered-item">
+							Event that will listen to execute the effect ('click', 'mouseenter', 'mouseenter mouseleave' and all the events used in jquery);
+						</li>
+						<li class="ordered-item">
+							Element that will trigger the execution (I prefer using 'data-' elements, simples as [data-accordion="header"] to accordion's header, but you can use jquery notation as you like (classes and id);
+						</li>
+						<li class="ordered-item">
+							Element that will receive the execution, such as [data-accordion="panel"] to execute the accordion effect in the elements that have this attribute ( like example above );
+						</li>
+					</ol>
+					<p class="text">
+						<span class="optional">
+							You can aways pass a 5th optional argument that will be used as a time to execute the effect.
+						</span>
+						Your javascript function will sound just like this:
+						<span class="function">
+							$.init( 'dropdown','click','[data-dropdown="link"]','[data-dropdown="content"]', 500 );
+						</span>
+					</p>
+					<p class="text">
+						You can explore the plugins.extended.js lib to other functions, animations and customize your effects. <br>
+						All the css used only in elements of the extended lib is setted up by jquery too.
+						<br>
+						When initialized, the functions will display a message in your console log containing the name and the activation status ( true to success and false to fail ).
+						<br>
+						You can call the functions without the $.init effect, just calling $.functionName and passing the required arguments.
+					</p>
+					<hr class="hr">
+					<h3 class="title">Animations List</h3>
+					<ul class="ordered-list">
+					<!-- <li class="ordered-item">
+							canvas: performs an off-canvas menu animation. <br>
+							<span class="important">Important:</span> To completely use this effect is necessary to create an element with attribute [data-canvas="menu"], used to set the menu inner container animation.
+						</li> -->
+						<li class="ordered-item">
+							dropdown: execute a dropdown effect, just like reponsive menus;
+						</li>
+						<li class="ordered-item">
+							slider: performs a simple slide ( up / down );
+						</li>
+						<li class="ordered-item">
+							tabs: execute a tab animation;
+						</li>
+						<li class="ordered-item">
+							modal: execute a modal animation. <br>
+							<span class="important">Important:</span> To completely use this effect is necessary to create other two elements inside your modal "content", and they are elements with attributes [data-modal="close"] that, with a "X" inside will perform the close button, and [data-modal="outer"], that will perform the close action when user clicks ( or execute the event you passed to the function ) in the outside of your modal full ( black ) panel;
+						</li>
+						<li class="ordered-item">
+							accordion: performs an accordion simple animation.
+						</li>
+						<li class="ordered-item">
+							parallax: execute a parallax background simple animation. <br>
+							<span class="important">Important:</span> To completely use this effect, just call 'parallax', pass the element that will have the background parallaxed, and the [data-*] attribute with the animation speed value ( just set something like [data-parallax="5"] and pass '[data-parallax]' as the 4th argument, you can just an [data-parallax] attribute with the value, and pass as argument only one time. without passing the 4th argument, the function will assume that the 2nd argument is the data-attribute and use its value to proceed with the animation ).
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="usage" data-tab="conteudo-principal">
+				<div class="block">
+					<h2 class="title">About</h2>
+					<p class="text">
+						This project is in search of execute the most used front-end animation using jquery, without import plugins or other heavy scripts that make your pages load slower. <br>
+						FrameWorking lib is in constant update. <br>
+						When a update is ready to use, I will pushing the files to the repo.
+					</p>
+					<p class="text">
+						Hope you enjoy it!
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+<!-- JQUERY -->
+<script src="js/jquery-1.11.3.min.js"></script>
+<!-- PLUGINS.EXTENDED -->
+<!-- <script src="js/plugins.extended.js" charset="UTF-8"></script> -->
+<!-- ES6 EXTENDED PLUGINS -->
+<script src="js/plugins.extended.es6.js" charset="UTF-8"></script>
+<script>
+	var dropdown = new Dropdown('click','[data-dropdown="link"]','[data-dropdown="content"]');
+	var slider = new Slider('click','[data-slide="control"]','[data-slide="content"]');
+	var tabs = new Tabs('click','[data-tab="control"]','[data-tab="panel"]')
+	var accordion = new Accordion('click','[data-accordion="header"]','[data-accordion="content"]');
+	var tabsPrincipal = new Tabs('click','[data-tab="menu-principal"]','[data-tab="conteudo-principal"]');
+	var parallax = new Parallax( '[data-parallax]' , '80%');
+	// var modal = new Modal( '[data-parallax]' , '80%');
+	// init the objects animations
+	$(function(){
+			dropdown.init();
+			slider.init();
+			tabs.init();
+			tabsPrincipal.init();
+			accordion.init();
+			parallax.init();
+			// modal.init();
+	});
+</script>
+</html>
