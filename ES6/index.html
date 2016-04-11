@@ -235,16 +235,16 @@
 	var accordion = new Accordion('click','[data-accordion="header"]','[data-accordion="content"]');
 	var tabsPrincipal = new Tabs('click','[data-tab="menu-principal"]','[data-tab="conteudo-principal"]');
 	var parallax = new Parallax( '[data-parallax]' , '80%');
-	// var modal = new Modal( '[data-parallax]' , '80%');
+	var modal = new Modal('click','[data-modal="button"]','[data-modal="panel"]');
 	// init the objects animations
 	$(function(){
-			dropdown.init();
-			slider.init();
-			tabs.init();
-			tabsPrincipal.init();
-			accordion.init();
-			parallax.init();
-			// modal.init();
-	});
-</script>
-</html>
+		dropdown.init();
+		slider.init();
+		tabs.init();
+		tabsPrincipal.init();
+		accordion.init();
+		parallax.init();
+		modal.init();
+		});
+	</script>
+	</html>
