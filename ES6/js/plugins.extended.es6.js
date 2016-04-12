@@ -144,37 +144,21 @@ class Accordion extends Default{
 }
 // MODAL CLASS
 class Modal extends Default{
-		//SET THE close function, to bind in elements
-		close(){
-			$( this.target )
-			.fadeOut( this.time );
-
-			$( this.trigger )
-			.attr( 'data-active', false );
-			$( this.target )
-			.attr( 'data-active', false );
-		}
-		/*
-			#other animations properties
-				.toggle( time )
-				.slideToggle( time )
-				.slideDown( time )
-				.slideUp( time )
-				*/
+	constructor( event, trigger, target, time ){
+		super( event, trigger, target, time );
 		//<-----
 		//styles
 		//set modal panel style
-		init(){
-			const _this = this;
-			$( _this.target ).css({
-				'width': '100vw',
-				'height': '100vh',
-				'position': 'fixed',
-				'background': 'rgba(0, 0, 0, 0.8)',
-				'left':'0',
-				'top':'0',
-				'z-index': '5000'
-			}); 
+		//----->
+		$( this.target ).css({
+			'width': '100vw',
+			'height': '100vh',
+			'position': 'fixed',
+			'background': 'rgba(0, 0, 0, 0.8)',
+			'left':'0',
+			'top':'0',
+			'z-index': '5000'
+		}); 
 		// set modal content (white panel) style
 		$( '[data-modal="content"' ).css({
 			'width':'80vw',
@@ -191,68 +175,88 @@ class Modal extends Default{
 			'font-size':'10vw',
 			'cursor':'default'
 		});
-		//----->
-		$( _this.trigger )
-		.unbind( _this.event )
-		.bind( _this.event, function(){
-			$( this )
-			.attr( 'data-active', true )
-			.nextAll( _this.target )
-			.eq(0)
-			.fadeIn( _this.time )
-			.attr( 'data-active', true );
-		});
-
-		if ( $( '[data-modal="close"]' ) ) {
-			//<-----
-			$( '[data-modal="close"]' ).css({
-				'width':' 5vw',
-				'height':' 5vh',
-				'position':'absolute',
-				'right':' 0',
-				'top':' 0',
-				'line-height':' 5vh',
-				'text-align':' center',
-				'font-size':' 3vw',
-				'color':'#FFF',
-				'background':'#E85151',
-				'cursor':'pointer'
-			});
-			//----->
-			$( '[data-modal="close"]' )
-			.unbind( 'click' )
-			.bind( 'click', _this.close );
-		}
-		if ( $( '[data-modal="outer"]' ) ) {
-			/*
-			<--
-			# if modal outer exists, set the style
-			# but you can set this using css only
-			-->
-			*/
-			$( '[data-modal="outer"' ).css({
-				'width':'100vw',
-				'height':'100vh',
-				'position':'absolute',
-				'cursor':'default'
-			});
-			$( '[data-modal="outer"]' )
-			.unbind( 'click' )
-			.bind( 'click', _this.close );
-		}
-		$( _this.target ).css( 'display', 'none' );
+		return this;
 	}
-}
+			//SET THE close function, to bind in elements
+			close(){
+				$( this.target )
+				.fadeOut( this.time );
+
+				$( this.trigger )
+				.attr( 'data-active', false );
+				$( this.target )
+				.attr( 'data-active', false );
+			}
+			/*
+			#other animations properties
+				.toggle( time )
+				.slideToggle( time )
+				.slideDown( time )
+				.slideUp( time )
+				*/
+
+				init(){
+					const _this = this;
+					$( _this.trigger )
+					.unbind( _this.event )
+					.bind( _this.event, function(){
+						$( this )
+						.attr( 'data-active', true )
+						.nextAll( _this.target )
+						.eq(0)
+						.fadeIn( _this.time )
+						.attr( 'data-active', true );
+					});
+
+					if ( $( '[data-modal="close"]' ) ) {
+						$( '[data-modal="close"]' ).css({
+							'width':' 5vw',
+							'height':' 5vh',
+							'position':'absolute',
+							'right':' 0',
+							'top':' 0',
+							'line-height':' 5vh',
+							'text-align':' center',
+							'font-size':' 3vw',
+							'color':'#FFF',
+							'background':'#E85151',
+							'cursor':'pointer'
+						});
+
+						$( '[data-modal="close"]' )
+						.unbind( 'click' )
+						.bind( 'click', function(){
+							_this.close();
+						});
+					}
+					if ( $( '[data-modal="outer"]' ) ) {
+						$( '[data-modal="outer"' ).css({
+							'width':'100vw',
+							'height':'100vh',
+							'position':'absolute',
+							'cursor':'default'
+						});
+
+						$( '[data-modal="outer"]' )
+						.unbind( 'click' )
+						.bind( 'click', function(){
+							_this.close();
+						});
+					}
+					$( _this.target ).css( 'display', 'none' );
+				}
+			}
 // PARALLAX CLASS
-class Parallax extends Default{
+//extends Default
+class Parallax{
 	constructor( element , xPos , dataAttr ){
 		// it's necessary to call constructor of super class to overwrite it
-		super();
+		//super();
 		this.element = element;
 		this.xPos = xPos;
 		this.dataAttr = dataAttr;
 		// and it's necessary to return the overwritter constructor too
-		return this;
+		//return this;
 	}
 	init(){
 		const _this = this;
