@@ -13,10 +13,10 @@ class Default{
 // DROPDOWN CLASS
 class Dropdown extends Default{
 	init(){
-		const _this = this;
-		$( _this.trigger )
-		.unbind(  _this.event )
-		.bind(  _this.event , function(){			
+		const self = this;
+		$( self.trigger )
+		.unbind(  self.event )
+		.bind(  self.event , function(){			
 			/*
 			<--
 			# desactivate others when effect comes up
@@ -31,8 +31,8 @@ class Dropdown extends Default{
 			 if ( $( this ).attr( "data-active") == "true" ) {
 			 	$( this )
 			 	.attr( "data-active", false )
-			 	.next(  _this.target )
-			 	.slideToggle(  _this.time )
+			 	.next(  self.target )
+			 	.slideToggle(  self.time )
 			 	.attr( "data-active", false );
 			 	return;
 			 }
@@ -40,8 +40,8 @@ class Dropdown extends Default{
 
 			 $( this )
 			 .attr( "data-active", true )
-			 .next(  _this.target )
-			 .slideToggle(  _this.time )
+			 .next(  self.target )
+			 .slideToggle(  self.time )
 			 .attr( "data-active",  true );
 
 			});
@@ -50,63 +50,63 @@ class Dropdown extends Default{
 // SLIDER CLASS
 class Slider extends Default{
 	init(){
-		const _this = this;
-		$( _this.trigger )
-		.unbind( _this.event )
-		.bind( _this.event, function(){
+		const self = this;
+		$( self.trigger )
+		.unbind( self.event )
+		.bind( self.event, function(){
 
-			$( _this.target )
+			$( self.target )
 			.attr( "data-active", false)
-			.slideUp( _this.time );
+			.slideUp( self.time );
 
-			$( _this.trigger )
+			$( self.trigger )
 			.attr( "data-active", false );
 
 
-			$( _this.target+':nth-child('+ ( $( this ).index() + 1) +')' )
-			.slideDown( _this.time )
+			$( self.target+':nth-child('+ ( $( this ).index() + 1) +')' )
+			.slideDown( self.time )
 			.attr( "data-active", true );
 
 			$( this )
 			.attr( "data-active", true );
 
 		});
-		$( _this.trigger+':nth-child(1) ' ).trigger( "click" );
+		$( self.trigger+':nth-child(1) ' ).trigger( "click" );
 	}
 }
 // TABS CLASS
 class Tabs extends Default{
 	init(){
-		const _this = this;
-		$( _this.trigger )
-		.unbind( _this.event )
-		.bind( _this.event, function(){
+		const self = this;
+		$( self.trigger )
+		.unbind( self.event )
+		.bind( self.event, function(){
 
-			$( _this.target )
+			$( self.target )
 			.attr( 'data-active', false )
 			.css( 'display', 'none' );
 
-			$( _this.trigger )
+			$( self.trigger )
 			.attr( 'data-active', false );
 
-			$( _this.target+':nth-of-type('+ ( $( this ).index() + 1 ) +')' )
-			.toggle( _this.time )
+			$( self.target+':nth-of-type('+ ( $( this ).index() + 1 ) +')' )
+			.toggle( self.time )
 			.attr( 'data-active', true );
 
 			$( this )
 			.attr( 'data-active', true );
 
 		});
-		$( _this.trigger+':nth-child(1)' ).trigger( 'click' );
+		$( self.trigger+':nth-child(1)' ).trigger( 'click' );
 	}
 }
 // ACCORDION CLASS
 class Accordion extends Default{
 	init(){
-		const _this = this;
-		$( _this.trigger )
-		.unbind( _this.event )
-		.bind( _this.event, function(){
+		const self = this;
+		$( self.trigger )
+		.unbind( self.event )
+		.bind( self.event, function(){
 
 			if ( $( this ).attr( 'data-active' ) == 'true' ) {
 				
@@ -114,32 +114,32 @@ class Accordion extends Default{
 				.attr( 'data-active', false );
 
 				$( this )
-				.next( _this.target )
-				.slideToggle( _this.time )
+				.next( self.target )
+				.slideToggle( self.time )
 				.attr( 'data-active', false );
 				return;
 			}
 
-			$( _this.trigger+'[data-active="true"]' )
+			$( self.trigger+'[data-active="true"]' )
 			.attr( 'data-active', false )
-			.next( _this.target )
-			.slideToggle( _this.time )
+			.next( self.target )
+			.slideToggle( self.time )
 			.attr( 'data-active', false );
 
-			$( _this.trigger )
+			$( self.trigger )
 			.attr( 'data-active', false );
 
-			$( _this.target )
+			$( self.target )
 			.attr( 'data-active', false );
 
 			$( this )
 			.attr( 'data-active', true )
-			.next( _this.target )
-			.slideToggle( _this.time )
+			.next( self.target )
+			.slideToggle( self.time )
 			.attr( 'data-active', true );
 
 		});
-		$( _this.target ).css('display', 'none');
+		$( self.target ).css('display', 'none');
 	}
 }
 // MODAL CLASS
@@ -196,15 +196,15 @@ class Modal extends Default{
 				*/
 
 				init(){
-					const _this = this;
-					$( _this.trigger )
-					.unbind( _this.event )
-					.bind( _this.event, function(){
+					const self = this;
+					$( self.trigger )
+					.unbind( self.event )
+					.bind( self.event, function(){
 						$( this )
 						.attr( 'data-active', true )
-						.nextAll( _this.target )
+						.nextAll( self.target )
 						.eq(0)
-						.fadeIn( _this.time )
+						.fadeIn( self.time )
 						.attr( 'data-active', true );
 					});
 
@@ -226,7 +226,7 @@ class Modal extends Default{
 						$( '[data-modal="close"]' )
 						.unbind( 'click' )
 						.bind( 'click', function(){
-							_this.close();
+							self.close();
 						});
 					}
 					if ( $( '[data-modal="outer"]' ) ) {
@@ -240,10 +240,10 @@ class Modal extends Default{
 						$( '[data-modal="outer"]' )
 						.unbind( 'click' )
 						.bind( 'click', function(){
-							_this.close();
+							self.close();
 						});
 					}
-					$( _this.target ).css( 'display', 'none' );
+					$( self.target ).css( 'display', 'none' );
 				}
 			}
 // PARALLAX CLASS
@@ -259,25 +259,32 @@ class Parallax{
 		//return this;
 	}
 	init(){
-		const _this = this;
-		if ( !_this.xPos ) _this.xPos = '50%';
-		if ( !_this.dataAttr ) _this.dataAttr = _this.element;
-		_this.dataAttr = _this.dataAttr.replace('[','').replace(']','');
-		$( _this.element ).each(function() {
+		const self = this;
+		if ( !self.xPos ) self.xPos = '50%';
+		if ( !self.dataAttr ) self.dataAttr = self.element;
+		self.dataAttr = self.dataAttr.replace('[','').replace(']','');
+		$( self.element ).each(function() {
 			$( this ).css({
 				'width':' 100%',
 				'max-width':'100%',
 				'position':' relative',
-				'background-position': _this.xPos +' 0' ,
+				'background-position': self.xPos +' 0' ,
 				'background-repeat':' no-repeat',
 				'background-attachment':' fixed',
 			});
 			var $obj = $( this );
 			$( window ).scroll(function() {
 				var offset = $obj.offset();
-				var yPos = - ( $(window).scrollTop() - offset.top ) / $obj.attr( _this.dataAttr );
-				var bgPos = _this.xPos + '' + yPos + 'px';
+				var yPos = - ( $(window).scrollTop() - offset.top ) / $obj.attr( self.dataAttr );
+				var bgPos = self.xPos + '' + yPos + 'px';
 				$obj.css('background-position', bgPos);
+				if ( $( '[data-parallax-content]' ) ) {
+					$( '[data-parallax-content]' ).css({
+						'margin-top': - ( $( window ).scrollTop() / 3 ) + "px",
+						'opacity': 1 - ( $( window ).scrollTop() / 480),
+						'text-shadow': '0px -'+( $( window ).scrollTop() / 3 )+'px 10px'
+					});
+				}
 			});
 		});
 	}

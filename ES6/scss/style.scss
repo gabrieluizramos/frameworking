@@ -351,6 +351,15 @@ body{
 		background-image: url( ../images/nebulosa.jpg );
 		padding: 15em 0;
 	}
+	[data-parallax-content]{
+		width: 100%;
+		text-align: center;
+		padding:20px;
+		font-size:55px;
+		color:#FFF;
+		text-transform:uppercase;
+		//text-shadow:15px 20px 4px #406792;
+	}
 }
 
 // SET DIFFERENT STYLE TO ALL ACTIVE ELEMENTS
