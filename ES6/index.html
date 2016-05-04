@@ -51,6 +51,10 @@
 				<!-- <div class="block canvas">
 					<span data-canvas="link">Off Canvas Menu</span>
 				</div> -->
+				<div class="block counter">
+					<h2 class="title">Counter</h2>
+					<span class="title" data-counter>0</span>
+				</div>
 				<div class="block parallax">
 					<h2 class="title">Parallax</h2>
 					<div data-parallax="3">
@@ -239,15 +243,16 @@
 	var tabsPrincipal = new Tabs('click','[data-tab="menu-principal"]','[data-tab="conteudo-principal"]');
 	var parallax = new Parallax( '[data-parallax]' , '80%');
 	var modal = new Modal('click','[data-modal="button"]','[data-modal="panel"]');
+	var counter = new Counter( '[data-counter]' , 0 , 150 , 0);
 	// init the objects animations
-	$(function(){
-		dropdown.init();
-		slider.init();
-		tabs.init();
-		tabsPrincipal.init();
-		accordion.init();
-		parallax.init();
-		modal.init();
-	});
+	// $(function(){
+	// 	dropdown.init();
+	// 	slider.init();
+	// 	tabs.init();
+	// 	tabsPrincipal.init();
+	// 	accordion.init();
+	// 	parallax.init();
+	// 	modal.init();
+	// });
 </script>
 </html>

@@ -5,6 +5,8 @@ class Default{
 		this.trigger = trigger;
 		this.target = target;
 		this.time = time;
+		// INIT THE EFFECT EXECUTION
+		this.init();
 	}
 	get instance(){
 		return this;
@@ -247,7 +249,6 @@ class Modal extends Default{
 				}
 			}
 // PARALLAX CLASS
-//extends Default
 class Parallax{
 	constructor( element , xPos , dataAttr ){
 		// it's necessary to call constructor of super class to overwrite it
@@ -255,6 +256,7 @@ class Parallax{
 		this.element = element;
 		this.xPos = xPos;
 		this.dataAttr = dataAttr;
+		this.init();
 		// and it's necessary to return the overwritter constructor too
 		//return this;
 	}
@@ -287,5 +289,25 @@ class Parallax{
 				}
 			});
 		});
+	}
+}
+// COUNTER CLASS
+class Counter{
+	constructor( element , where = 0 , to , time ){
+		this.element = element;
+		this.where = where;
+		this.to = to;
+		this.time = time;
+		this.init();
+	}
+	init(){
+		const self = this;
+		var counted = setInterval( 
+			function(){
+				$( self.element ).html( self.where );
+				if ( self.where == self.to ) clearInterval( counted );
+				self.where++;
+			} ,
+			self.time );
 	}
 }
