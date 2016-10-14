@@ -249,7 +249,7 @@ class Modal extends Default{
 				}
 			}
 // PARALLAX CLASS
-class Parallax{
+class customParallax{
 	constructor( element , xPos , dataAttr ){
 		// it's necessary to call constructor of super class to overwrite it
 		//super();
@@ -267,7 +267,6 @@ class Parallax{
 		self.dataAttr = self.dataAttr.replace('[','').replace(']','');
 		$( self.element ).each(function() {
 			$( this ).css({
-				'width':' 100%',
 				'max-width':'100%',
 				'position':' relative',
 				'background-position': self.xPos +' 0' ,
@@ -289,6 +288,36 @@ class Parallax{
 				}
 			});
 		});
+	}
+}
+// PARALLAX
+class Parallax{
+	constructor( container , speed , axisX = '50%' ){
+		this.container = container;
+		this.dataAttr = speed;
+		this.axisX = axisX;
+		this.init();
+	}
+	init(){
+		
+		var speedAttr = this.dataAttr;
+		var axisX = this.axisX;
+		
+		$( this.container ).each( function( idx , el ){
+	 	
+	 		var $element = $( el );
+        	var elementSpeed = $( el ).data( speedAttr );
+        	console.log( elementSpeed )
+        	
+        	$(window).scroll(function() {
+        		var yPos = -( $(window).scrollTop() / elementSpeed ); 
+        		yPos += 64;
+        		var bgpos = axisX + ' ' + yPos + 'px';
+         
+        		$element.css('background-position', bgpos );
+         
+        	}); 
+        });
 	}
 }
 // COUNTER CLASS
